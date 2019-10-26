@@ -1,0 +1,39 @@
+
+      rcircle = 20
+  circle (xo, yo, rcircle2)
+  xo = xo - 4;
+  if (xo < 0){
+    xo = random(1000)
+  }
+  circle (xo2, yo2, rcircle2)
+  xo2 = xo2 - 5;
+  if (xo2 < 0){
+    xo2 = random(1000)
+  }
+  if ( keyIsDown (CONTROL) && estadoDisparo == false){
+    xd = xcircle;
+    yd = ycircle;
+    estadoDisparo = true
+  }  
+  if (estadoDisparo == true){
+    ellipse (xd, yd, 4, 4)
+    xd = xd + 10
+    if (xd > 400){
+      estadoDisparo = false
+    }
+} 
+  if (dist(xcircle, ycircle, xo, yo) < rcircle + rcircle2){
+    xcircle = 20;
+    ycircle = 328;
+   while (pontos>0){
+     pontos = pontos - 1; 
+   }
+  }
+  if (dist(xcircle, ycircle, xo2, yo2) < rcircle + rcircle2){
+    xcircle = 20;
+    ycircle = 328;
+    while (pontos>0){
+     pontos = pontos - 1;
+   }
+  }
+}
